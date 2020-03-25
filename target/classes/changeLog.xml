@@ -8,13 +8,30 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
 
-    <changeSet id="1.1" author="yanaKo">
+    <changeSet id="1.1.7" author="yanaKo">
         <sql>
-            create table city_information(
+            create table cityEntity (
             id int not null primary key auto_increment,
-            cityName varchar(50),
+            cityEntityName varchar(50),
             outPutMessage varchar(50)
             )
+        </sql>
+    </changeSet>
+
+    <changeSet id="1.1.5" author="yanaKo">
+        <sql>
+          insert into cityEntity(cityEntityName, outPutMessage) values
+            ('New York','New York it is not the capital of USA'),
+            ('London','It is Big Ben')
+        </sql>
+    </changeSet>
+
+    <changeSet id="1.1.8" author="yanaKo">
+        <sql>
+            insert into cityEntity(cityEntityName, outPutMessage) values
+            ('Paris', 'Dream city in France'),
+            ('Milan', 'Fashion is everywhere'),
+            ('Madrid', 'It is hot in the city')
         </sql>
     </changeSet>
 </databaseChangeLog>

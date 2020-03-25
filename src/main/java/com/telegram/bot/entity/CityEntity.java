@@ -6,37 +6,50 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
-@Table(name = "city_information")
+@Table(name = "cityentity")
 public class CityEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue/*(strategy = GenerationType.IDENTITY)*/
     private Long id;
 
-    @NotNull
-    @Column(name = "name")
-    private String cityName;
 
-    @NotNull
-    @Column(name = "outPutMessage")
+    @Column(name = "cityentityname")
+    private String cityEntityName;
+
+
+    @Column(name = "outputmessage")
     private String outPutMessage;
 
 
     public CityEntity() {
     }
 
-    public CityEntity(Long id, @NotNull String cityName, @NotNull String outPutMessage) {
-        this.id = id;
-        this.cityName = cityName;
+    public CityEntity(@NotNull String cityEntityName, @NotNull String outPutMessage) {
+        this.cityEntityName = cityEntityName;
         this.outPutMessage = outPutMessage;
     }
 
-    public String getCityName() {
-        return cityName;
+    public CityEntity(Long id, @NotNull String cityEntityName, @NotNull String outPutMessage) {
+        this.id = id;
+        this.cityEntityName = cityEntityName;
+        this.outPutMessage = outPutMessage;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCityEntityName() {
+        return cityEntityName;
+    }
+
+    public void setCityEntityName(String cityEntityName) {
+        this.cityEntityName = cityEntityName;
     }
 
     public String getOutPutMessage() {
@@ -53,12 +66,12 @@ public class CityEntity {
         if (o == null || getClass() != o.getClass()) return false;
         CityEntity that = (CityEntity) o;
         return Objects.equals(id, that.id) &&
-                Objects.equals(cityName, that.cityName) &&
+                Objects.equals(cityEntityName, that.cityEntityName) &&
                 Objects.equals(outPutMessage, that.outPutMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cityName, outPutMessage);
+        return Objects.hash(id, cityEntityName, outPutMessage);
     }
 }

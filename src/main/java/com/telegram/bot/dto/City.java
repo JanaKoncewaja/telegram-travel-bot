@@ -6,6 +6,10 @@ private Long id;
 private String cityName;
 private String outPutMessage;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getCityName() {
         return cityName;
     }

@@ -1,5 +1,7 @@
 com\telegram\bot\repository\CityRepository.class
 com\telegram\bot\confbot\ChatBot.class
+com\telegram\bot\service\CityService.class
 com\telegram\bot\entity\CityEntity.class
 com\telegram\bot\dto\City.class
 com\telegram\bot\SpringBootApplication2.class
+com\telegram\bot\controller\CityController.class
